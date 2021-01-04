@@ -3,6 +3,7 @@ package com.epam.suffixingApp;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -12,19 +13,21 @@ public class FileDownloader {
     private List<String> filePaths;
     private String suffix;
 
-    public FileDownloader(String resource) {
-        fileDownloading(resource);
+    public FileDownloader() {
+        fileDownloading();
     }
 
-    private void fileDownloading(String resource) {
-        FileInputStream fileInputStream;
+    private void fileDownloading() {
+//        FileInputStream fileInputStream;
         Properties property = new Properties();
         Set<Object> set;
+        String resource = "/config.properties";
         suffix = null;
         filePaths = new ArrayList<>();
-        try {
-            fileInputStream = new FileInputStream(resource);
-            property.load(fileInputStream);
+        try(InputStream input = getClass().getResourceAsStream(resource)) {
+//            fileInputStream = new FileInputStream("src/main/resources/config.properties");
+//            property.load(fileInputStream);
+            property.load(input);
             set = property.keySet();
             for (Object s : set) {
                 String key = (String) s;

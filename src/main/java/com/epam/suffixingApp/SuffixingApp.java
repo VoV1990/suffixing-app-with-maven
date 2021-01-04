@@ -15,7 +15,7 @@ old_name -> new_name
 
 public class SuffixingApp {
     public static void main( String[] args ) {
-        FileDownloader downloader = new FileDownloader("src/main/resources/config.properties");
+        FileDownloader downloader = new FileDownloader();
         if(!downloader.getFilePaths().isEmpty() && downloader.getSuffix() != null)
             fileRenaming(downloader.getFilePaths(), downloader.getSuffix());
         else
