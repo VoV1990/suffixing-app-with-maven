@@ -1,60 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.epam.suffixingApp.SuffixingAppTest" time="0.078" tests="1" errors="0" skipped="0" failures="0">
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="1" failures="0" name="com.epam.suffixingApp.SuffixingAppTest" time="0.005" errors="0" skipped="0">
   <properties>
-    <property name="java.specification.version" value="14"/>
-    <property name="sun.cpu.isalist" value="amd64"/>
-    <property name="sun.jnu.encoding" value="Cp1251"/>
-    <property name="java.class.path" value="D:\JAVA\suffixing-app-with-maven\target\test-classes;D:\JAVA\suffixing-app-with-maven\target\classes;C:\Users\Vova\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Vova\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Vova\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="sun.arch.data.model" value="64"/>
-    <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://java.oracle.com/"/>
-    <property name="user.timezone" value="Europe/Minsk"/>
-    <property name="os.name" value="Windows 8.1"/>
-    <property name="java.vm.specification.version" value="14"/>
-    <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="user.country" value="RU"/>
+    <property name="idea.version" value="2020.3.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="14+36-1461"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-14\bin"/>
-    <property name="sun.java.command" value="C:\Users\Vova\AppData\Local\Temp\surefire14397183379789996103\surefirebooter4220199988291325092.jar C:\Users\Vova\AppData\Local\Temp\surefire14397183379789996103 2021-01-04T15-53-49_800-jvmRun1 surefire6295821816470690778tmp surefire_015667426295308322990tmp"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\JAVA\suffixing-app-with-maven"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="D:\JAVA\suffixing-app-with-maven"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="java.runtime.version" value="14+36-1461"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\Vova\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 8.1"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.4\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.4\plugins\maven\lib\maven3\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-14\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\PICT\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-14\bin;C:\apache-maven-3.6.3\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Program Files\Java\jdk-14\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2020.2\bin;;C:\Users\Vova\AppData\Local\Programs\Microsoft VS Code\bin;."/>
+    <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.4\plugins\maven\lib\maven3/conf"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="D:\JAVA\suffixing-app-with-maven\target\test-classes;D:\JAVA\suffixing-app-with-maven\target\classes;C:\Users\Vova\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Vova\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Vova\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;"/>
-    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.class.version" value="58.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.3"/>
     <property name="user.home" value="C:\Users\Vova"/>
+    <property name="user.timezone" value="Europe/Minsk"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="14"/>
+    <property name="user.name" value="Vova"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.4\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.4\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
+    <property name="java.vm.specification.version" value="14"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2020.3.1 clean package"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-14"/>
     <property name="user.language" value="ru"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2020-03-17"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk-14"/>
-    <property name="file.separator" value="\"/>
-    <property name="basedir" value="D:\JAVA\suffixing-app-with-maven"/>
-    <property name="java.vm.compressedOopsMode" value="32-bit"/>
-    <property name="line.separator" value="&#10;"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Vova\AppData\Local\Temp\surefire14397183379789996103\surefirebooter4220199988291325092.jar"/>
-    <property name="user.script" value=""/>
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="14+36-1461"/>
-    <property name="user.name" value="Vova"/>
-    <property name="path.separator" value=";"/>
-    <property name="os.version" value="6.3"/>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="file.encoding" value="Cp1251"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="localRepository" value="C:\Users\Vova\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
-    <property name="java.io.tmpdir" value="C:\Users\Vova\AppData\Local\Temp\"/>
-    <property name="idea.version" value="2020.3.1"/>
-    <property name="java.version" value="14"/>
-    <property name="user.dir" value="D:\JAVA\suffixing-app-with-maven"/>
-    <property name="os.arch" value="amd64"/>
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="sun.os.patch.level" value=""/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-14\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\PICT\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-14\bin;C:\apache-maven-3.6.3\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Program Files\Java\jdk-14\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2020.2\bin;;C:\Users\Vova\AppData\Local\Programs\Microsoft VS Code\bin;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="14"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="14+36-1461"/>
+    <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.4\plugins\maven\lib\maven3"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2020-03-17"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="java.class.version" value="58.0"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="com.epam.suffixingApp.SuffixingAppTest" time="0.004"/>
+  <testcase classname="com.epam.suffixingApp.SuffixingAppTest" name="shouldAnswerWithTrue" time="0.005"/>
 </testsuite>
