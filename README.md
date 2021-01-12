@@ -20,3 +20,14 @@ Add a dependency to some library for reading and parsing JSON files. (for instan
 Write the code implementing the app specification.
 Configure maven project to build a runnable jar containing application and its dependencies.
 Show the mentor your results.
+
+Logging Specification
+
+Application should log startup information.
+Application should log information on config read.
+Application should log renaming process information.
+Application should log summary information.
+Application should log shutdown information.
+Application should handle and log possible errors.
+
+Use different logging level. All log entries should contain a date and time information as well.
