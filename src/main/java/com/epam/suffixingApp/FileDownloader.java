@@ -1,82 +1,53 @@
 package com.epam.suffixingApp;
 
 import java.io.*;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.*;
+import java.util.logging.Level;
 
 public class FileDownloader {
+    private String resource;
     private List<File> files;
     private String suffix;
+    private String fileName;
 
-    public FileDownloader() {
+    public FileDownloader(String resource) {
+        this.resource = resource;
         fileDownloading();
     }
 
     private void fileDownloading() {
+        SuffixingApp.getLogger().fine("Download completed");
         Properties property = new Properties();
         Set<Object> set;
-        String resource = "/config.properties";
-        suffix = null;
         files = new ArrayList<>();
-        try(InputStream input = getClass().getResourceAsStream(resource)) {
+        try(FileInputStream input = new FileInputStream(resource)) {
+            SuffixingApp.getLogger().info("Reading the configuration file...");
             property.load(input);
             set = property.keySet();
+            SuffixingApp.getLogger().fine("The configuration file has been read");
             for (Object s : set) {
                 String key = (String) s;
                 if (key.equals("suffix")) {
                     if(suffix == null)
                     suffix = property.getProperty(key);
                 } else {
-                    String filePath = property.getProperty(key);
-                    isExist(filePath);
+                    fileName = property.getProperty(key);
+                    isExist();
                 }
             }
-        } catch (IOException | URISyntaxException e) {
-            System.out.println("Resource wasn't found.");
-            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Couldn't read config");
+            SuffixingApp.getLogger().log(Level.WARNING, "Exception: ", e);
         }
     }
 
-    private void isExist(String filePath) throws URISyntaxException {
-        File file = null;
-        URL res = getClass().getResource(filePath);
-        if(res == null) {
-            res = getClass().getResource(filePathChanging(filePath));
-            suffix = "old";
-        }
-        if (res.getProtocol().equals("jar")) {
-            try {
-                InputStream input = getClass().getResourceAsStream(filePath);
-                file = new File(filePath.substring(1));
-                boolean created = file.createNewFile();
-                OutputStream out = new FileOutputStream(file);
-                int read;
-                byte[] bytes = new byte[1024];
-
-                while ((read = input.read(bytes)) != -1) {
-                    out.write(bytes, 0, read);
-                }
-                files.add(file);
-                out.close();
-                file.deleteOnExit();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        } else {
-            file = new File(res.getFile());
+    private void isExist() {
+        File file = new File(fileName);
+        if (file.exists()) {
             files.add(file);
+        } else {
+            SuffixingApp.getLogger().info("File " + fileName + " doesn't exist");
         }
-
-        if (file != null && !file.exists()) {
-            throw new RuntimeException("Error: File " + file + " not found!");
-        }
-    }
-
-    private String filePathChanging(String filePath) {
-        String[]path = filePath.split("_");
-        path[0] = "/new";
-        return path[0] + "_" + path[1];
     }
 
     public List<File> getFiles() {
