@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <suffix>new</suffix>
+    <files>
+        <file>D:\\testDir\\old_file1.txt</file>
+        <file>D:\\testDir\\old_file2.txt</file>
+        <file>D:\\testDir\\old_file3.txt</file>
+        <file>D:\\testDir\\old_file4.txt</file>
+    </files>
+</config>

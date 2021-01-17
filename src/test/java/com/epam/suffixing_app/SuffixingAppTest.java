@@ -1,4 +1,4 @@
-package com.epam.suffixingApp;
+package com.epam.suffixing_app;
 
 import static org.junit.Assert.assertTrue;
 

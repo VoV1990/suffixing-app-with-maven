@@ -1,2 +1,3 @@
-com\epam\suffixingApp\FileDownloader.class
-com\epam\suffixingApp\SuffixingApp.class
+com\epam\tools\XMLReader.class
+com\epam\tools\XMLWriter.class
+com\epam\suffixing_app\SuffixingApp.class

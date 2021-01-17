@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.epam.suffixingApp.SuffixingAppTest
+Test set: com.epam.suffixing_app.SuffixingAppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 sec
