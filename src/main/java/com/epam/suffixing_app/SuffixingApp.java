@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
+import com.epam.config.AppConfig;
 import com.epam.tools.XMLReader;
 import com.epam.tools.XMLWriter;
 import org.apache.logging.log4j.Level;
@@ -67,9 +68,10 @@ public class SuffixingApp {
             logger.log(Level.ERROR, "Exception: ", ex);
         }
         assert xmlReader != null;
-        if(!xmlReader.getFiles().isEmpty() && xmlReader.getSuffix() != null) {
+        AppConfig config = xmlReader.getConfig();
+        if(!config.getFiles().isEmpty() && config.getSuffix() != null) {
             logger.info("Renaming the files...");
-            fileRenaming(xmlReader.getFiles(), xmlReader.getSuffix());
+            fileRenaming(config.getFiles(), config.getSuffix());
         } else {
             try {
                 throw new FileNotFoundException("No files found");
@@ -80,7 +82,7 @@ public class SuffixingApp {
         }
         if(successful) {
             xmlWriter = new XMLWriter(xmlReader.getAppLocation());
-            xmlWriter.setOldFilesList(xmlReader.getFiles());
+            xmlWriter.setOldFilesList(config.getFiles());
             xmlWriter.setNewFilesList(newFiles);
             xmlWriter.setConfigLocation(args[0]);
             xmlWriter.setRenamingTime(executionTime);

@@ -1,5 +1,6 @@
 package com.epam.tools;
 
+import com.epam.config.AppConfig;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,13 +20,13 @@ import java.util.List;
 
 public class XMLReader {
     static final Logger logger = LogManager.getLogger(XMLReader.class);
-    private final String config;
+    private final String configPath;
+    private AppConfig config;
     private final List<File> files = new ArrayList<>();
-    private String suffix;
     private String appLocation;
 
-    public XMLReader(String config) {
-        this.config = config;
+    public XMLReader(String configPath) {
+        this.configPath = configPath;
         configReader();
     }
 
@@ -34,30 +35,43 @@ public class XMLReader {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder;
         Document document;
+        config = new AppConfig();
         URL path = getClass().getProtectionDomain().getCodeSource().getLocation();
         int lastSlash = path.getFile().lastIndexOf("/");
         appLocation = path.getFile().substring(1, lastSlash + 1);
         try {
             logger.info("Reading the configuration file...");
             builder = factory.newDocumentBuilder();
-            document = builder.parse(new File(config));
+            document = builder.parse(new File(configPath));
             document.getDocumentElement().normalize();
-            NodeList nodeList = document.getElementsByTagName("suffix");
-            if(nodeList.getLength() > 0 && nodeList.item(0).getNodeType() == Node.ELEMENT_NODE) {
-                suffix = nodeList.item(0).getTextContent();
-            }
-            nodeList = document.getElementsByTagName("file");
-            if(nodeList.getLength() > 1)
-                for(int i = 0; i < nodeList.getLength(); i++) {
-                    Node node = nodeList.item(i);
-                    if(node.getNodeType() == Node.ELEMENT_NODE) {
-                        String fileName = node.getTextContent();
-                        isExist(fileName);
-                    }
-                }
+            getElements(document, "suffix");
+            getElements(document, "file");
+            config.setFiles(files);
             logger.info("The configuration file has been read");
         } catch (ParserConfigurationException | SAXException | IOException e) {
             logger.log(Level.ERROR, "Exception: ", e);
+        }
+    }
+
+    private void getElements(Document doc, String tagName) {
+        NodeList nodeList = doc.getElementsByTagName(tagName);
+        switch (tagName) {
+            case "suffix":
+                if(nodeList.getLength() > 0 && nodeList.item(0).getNodeType() == Node.ELEMENT_NODE)
+                    config.setSuffix(nodeList.item(0).getTextContent());
+                break;
+            case "file":
+                if(nodeList.getLength() > 0)
+                    for(int i = 0; i < nodeList.getLength(); i++) {
+                        Node node = nodeList.item(i);
+                        if(node.getNodeType() == Node.ELEMENT_NODE) {
+                            String fileName = node.getTextContent();
+                            isExist(fileName);
+                        }
+                    }
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid config properties");
         }
     }
 
@@ -71,12 +85,8 @@ public class XMLReader {
         }
     }
 
-    public List<File> getFiles() {
-        return files;
-    }
-
-    public String getSuffix() {
-        return suffix;
+    public AppConfig getConfig() {
+        return config;
     }
 
     public String getAppLocation() {
